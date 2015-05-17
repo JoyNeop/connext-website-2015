@@ -1,0 +1,504 @@
+<!--
+   _____                            _     ___   ___  __ _____ 
+  / ____|                          | |   |__ \ / _ \/_ | ____|
+ | |     ___  _ __  _ __   _____  _| |_     ) | | | || | |__  
+ | |    / _ \| '_ \| '_ \ / _ \ \/ / __|   / /| | | || |___ \ 
+ | |___| (_) | | | | | | |  __/>  <| |_   / /_| |_| || |___) |
+  \_____\___/|_| |_|_| |_|\___/_/\_\\__| |____|\___/ |_|____/ 
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<title>Connext 2015</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="/favicon.png">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<!--scroll-->
+	<script type="text/javascript" src="./js/move-top.js"></script>
+	<script type="text/javascript" src="./js/easing.js"></script>
+		<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+		</script>
+
+	<style type="text/css">
+	@-webkit-keyframes dim-and-glow {
+		0% {
+			opacity: 1;
+		}
+		25% {
+			opacity: 0.94;
+		}
+		50% {
+			opacity: 0.83;
+		}
+		75% {
+			opacity: 0.94;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@import url(/fonts/font-awesome.css);
+	* {
+		text-rendering: optimizeLegibility;
+		box-sizing: border-box;
+		transition: all 400ms ease;
+	}
+
+	.keep-horizontal-distance {
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+
+	.pull-center {
+		text-align: center;
+	}
+
+	.jn-button-group-wrap {
+		margin: 1.1em 0;
+		padding: 0.3em 0;
+	}
+
+	.ghost_btn {
+		font-size: 16px;
+		color: #FFF;
+		text-align: center;
+		text-decoration: none;
+		background: none;
+		border: 1px solid #FFF;
+		border-radius: 800px;
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		padding: 37px 0 0;
+		transition: all 300ms ease;
+	}
+	.ghost_btn:hover {
+		color: #000;
+		background: #FFF;
+	}
+	.img-p-logo {
+		margin: 50px 0;
+	}
+
+	/* --------------------------------------- */
+
+	body {
+		font-family: Libertad, Seravek, 'Myriad Pro', 'Myriad Set Pro', 'Myriad Set', Myriad, 'Avenir Nexr', Avenir, 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, 'Arial-Black', 'Arial Black', 'Hiragino Sans GB', 'Langtinghei SC', 'Noto Sans SC', 'Source Han Sans CN', 'Noto Sans CJK', 'Source Han Sans CJK', 'Source Han Sans', 'Heiti SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif;
+		font-size: 20px;
+		font-weight: 300;
+		color: #FFF;
+		min-height: 100vh;
+		padding: 0;
+		margin: 0;
+		background: #000;
+	}
+	#bg {
+		position: fixed;
+		top: -10vh;
+		left: 0;
+		width: 100%;
+		height: 120vh;
+		z-index: 1;
+		-webkit-perspective: 40000vh;
+		-moz-perspective: 40000vh;
+		-ms-perspective: 40000vh;
+		-o-perspective: 40000vh;
+		perspective: 40000vh;
+		-webkit-perspective-origin: center bottom;
+		-moz-perspective-origin: center bottom;
+		-ms-perspective-origin: center bottom;
+		-o-perspective-origin: center bottom;
+		perspective-origin: center bottom;
+	}
+	#bg .bg-lazer {
+		background: #00B7FF;
+		box-shadow: #00B7FF 0 0 3px 6px, #00B7FF 0 0 3px 0, #00B7FF 0 0 3px 0;
+		opacity: 0;
+		transition: all 30ms ease;
+
+		position: fixed;
+		top: -190vh;
+		left: 50vw;
+		width: 40px;
+		height: 450vh;
+		margin-top: 0vh;
+		margin-left: -20px;
+		z-index: 3;
+		-webkit-filter: blur(19px);
+		-moz-filter: blur(19px);
+		-ms-filter: blur(19px);
+		-o-filter: blur(19px);
+		-webkit-filter: blur(19px);
+		-moz-filter: blur(19px);
+		filter: blur(19px);
+		-webkit-transform-style: flat;
+		-moz-transform-style: flat;
+		transform-style: flat;
+	}
+	#bg #bg-up {
+		-webkit-transform: skewX(-33deg) translateX(100px) rotateX(70deg);
+		-moz-transform: skewX(-33deg) translateX(100px) rotateX(70deg);
+		-ms-transform: skewX(-33deg) translateX(100px) rotateX(70deg);
+		-o-transform: skewX(-33deg) translateX(100px) rotateX(70deg);
+		transform: skewX(-33deg) translateX(100px) rotateX(70deg);
+	}
+	#bg #bg-up.onload {
+		-webkit-animation: dim-and-glow 6s linear 0s infinite;
+	}
+	#bg #bg-down {
+		-webkit-transform: skewX(33deg) translateX(-100px) rotateX(70deg);
+		-moz-transform: skewX(33deg) translateX(-100px) rotateX(70deg);
+		-ms-transform: skewX(33deg) translateX(-100px) rotateX(70deg);
+		-o-transform: skewX(33deg) translateX(-100px) rotateX(70deg);
+		transform: skewX(33deg) translateX(-100px) rotateX(70deg);
+	}
+	#bg #bg-down.onload {
+		-webkit-animation: dim-and-glow 6s linear 2s infinite;
+	}
+	.shadow {
+		position: fixed;
+		background: linear-gradient(rgba(0, 0, 0, 0.90) 9%, rgba(0, 0, 0, 0) 80%);
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 140vh;
+		z-index: 33;
+		transform-style: flat;
+	}
+	.overall {
+		background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.94));
+		position: relative;
+		z-index: 555;
+	}
+	header a:link, header a:visited, header a:hover, header a:active {
+		display: block;
+		color: inherit;
+		text-decoration: inherit;
+	}
+	header {
+		opacity: 0;
+		position: relative;
+		height: 100vh;
+		padding: 1px 0 0;
+		margin: 0 auto 0;
+		z-index: 99;
+		/*transition: opacity 2000ms linear 40ms, top 440ms ease 0;*/
+		transition: all 1240ms ease 0;
+	}
+	header #title {
+		margin: 56vh 0 0;
+	}
+	#title-in {
+	}
+	.avatar {
+	}
+	.avatar:hover {
+	}
+	.avatar img {
+		display: block;
+		margin: 0 auto;
+	}
+	@media screen and (max-width: 768px) {
+		.avatar img {
+			max-width: 300px;
+		}
+	}
+	@media screen and (min-width: 768px) {
+		.avatar img {
+			max-width: 340px;
+		}
+	}
+	#main {
+		position: relative;
+		width: 100%;
+		padding: 0;
+		margin: 0 0;
+		z-index: 666;
+	}
+	.content {
+		padding: 60px 0 30px;
+		margin: 0 auto 50px;
+		border-radius: 4px;
+	}
+	@media screen and (max-width: 768px) {
+		.content {
+		}
+		.constrained-width {
+		}
+	}
+	@media screen and (min-width: 768px) {
+		.content {
+		}
+		.constrained-width {
+			margin: 0 auto;
+		}
+	}
+	header h1, header p {
+		font-weight: 400;
+		text-align: center;
+		width: 100%;
+		margin: 0;
+	}
+	header h1 {
+		font-size: 48px;
+		padding: 20px 0 10px;
+	}
+	header p {
+		line-height: 1.45em;
+		padding: 65px 0;
+	}
+	section {
+		min-height: 50vh;
+		padding: 30px 0;
+		margin: 0 auto 70px;
+		background-size: 100px;
+		/*overflow: hidden;*/
+	}
+	section h2 {
+		font-size: 42px;
+		font-weight: 400;
+		line-height: 42px;
+		color: #FFF;
+		text-align: center;
+		text-transform: uppercase;
+		padding: 8px 0 0;
+		margin: 0 0 24px 0;
+	}
+	section h3 {
+		text-align: center;
+	}
+	section h4 {
+		text-align: center;
+		text-transform: uppercase;
+	}
+	section p {
+		font-size: 20px;
+		font-weight: 300;
+		letter-spacing: 0.01rem;
+		line-height: 1.60em;
+		margin: 1.2em 0;
+		/*text-align: justify;*/
+		hyphens: auto;
+	}
+	.blockquote-container {
+		font-size: 18px;
+		background: rgba(0, 0, 0, 0.455);
+		border: 1px solid #444;
+		border-radius: 3px;
+		min-height: 132px;
+		padding: 16px;
+		margin: 1.8em 0;
+	}
+	.blockquote-container img.quote-avatar {
+		border-radius: 8888px;
+		float: right;
+		width: 100px;
+		height: 100px;
+		margin-left: 14px;
+	}
+	.blockquote-container blockquote {
+		font-size: inherit;
+		letter-spacing: 0.01rem;
+		line-height: 1.44em;
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+	.blockquote-container cite {
+		display: block;
+		margin-top: 14px;
+	}
+	.blockquote-container cite a {
+		color: #FFF;
+		text-decoration: none;
+	}
+	.blockquote-container cite a:hover {
+		color: #FFF;
+		text-decoration: none;
+		border-bottom: 1px solid #666;
+		transition: none;
+	}
+	footer {
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 16px;
+		text-align: center;
+		padding: 50px 0;
+	}
+	footer a {
+		color: inherit;
+		text-decoration: none;
+	}
+	.contact-module {
+		text-align: center;
+	}
+	.contact-module a {
+		color: white;
+	}
+	.logo_L{
+		margin: 30px 10px;
+		max-width: 300px;
+	}
+	.logo_M{
+		margin: 25px 10px; 
+		max-width: 250px;
+	}
+	.logo_S_h{
+		margin: 10px 5px;
+		max-height: 30px;
+	}
+	.logo_S_w{
+		margin: 10px 5px;
+		max-width: 168px;
+	}
+	</style>
+	<script type="text/javascript">
+	var showHeader = function () {
+		window.setTimeout(function(){
+			document.getElementById('bg-up').style.opacity = '1';
+		}, 70);
+		window.setTimeout(function(){
+			document.getElementById('bg-down').style.opacity = '1';
+		}, 400);
+		window.setTimeout(function(){
+			document.getElementById('grand-header').style.opacity = '1';
+			document.getElementById('grand-header').classList.add('onload');
+		}, 700);
+		window.setTimeout(function(){
+			document.getElementById('bg-up').classList.add('onload');
+			document.getElementById('bg-down').classList.add('onload');
+		}, 1000);
+	};
+	</script>
+</head>
+<body onload="showHeader()">
+	<div id="bg">
+		<div id="bg-up" class="bg-lazer"></div>
+		<div id="bg-down" class="bg-lazer"></div>
+	</div>
+	<div class="shadow"></div>
+
+	<div class="overall">
+		<header id="grand-header">
+			<div id="title">
+				<div id="title-in">
+					<a href="#main" class="scroll">
+						<div class="avatar">
+							<img retina src="/img/logo-and-slogan.png">
+						</div>
+					</a>
+					<!-- <p>Coming Soon...</p> -->
+				</div>
+			</div>
+		</header>
+		<div id="main">
+			<div class="content">
+				<section>
+					<div class="section-in container">
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<h2>新一代青少年科技大会</h2>
+								<h4>有些人早已身经百战，毕竟还是太年轻</h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+								<!--
+                                <div class="blockquote-container">
+									<img class="quote-avatar" src="https://avatars2.githubusercontent.com/u/4215392?v=3&s=460">
+									<blockquote>
+										Connext 汇聚新一代的科技人，让每个有互联网梦想的年轻人获得更多的可能与机遇，使他们迸发出的想法获得更深的启发并得以实现。无论是作为一个入门者，在会议上了解更有经验的科技人的产品与生涯并与他们相识，还是第一次站在大会演讲台，讲述自己团队的项目那一刻，Connext 或许已经改变一个青少年科技人的一生。<br />
+										<cite>— <a href="http://tianyu.in/">房天语</a>，Connext 联合创始人</cite>
+									</blockquote>
+								</div>
+								<p>
+								与同龄的极客或科技「发烧友」在同一会场中分享自己的项目、产品、经验和极客生活。在 Connext 2015 新一代青少年科技大会上，让更多有共同梦想的人关注到你，和更多有共同兴趣的人结交朋友，向更多不同水平的科技人分享你的想法…… 无论你是是有阅历和经验的技术宅，或是刚刚入门的初学者，你都能在 Connext 2015 这个线下公共平台获得新的学习机会和机遇。
+                                </p>
+								<p>2015 年的第一届会议将在北京举办，流程即将发布。</p>
+							</div>
+                         </div>
+                                -->
+						<div class="row">
+							<div class="jn-button-group-wrap text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<a class="ghost_btn keep-horizontal-distance" href="/speech/submit.html">演讲报名</a>
+								<a class="ghost_btn keep-horizontal-distance" href="http://www.huodongxing.com/go/connext" target="_blank">订购门票</a>
+								<a class="ghost_btn keep-horizontal-distance scroll" href="#">了解更多</a>
+							</div>
+
+						</div>
+						<!--房天语你不是人你改需求你又不找JN让我写 一百块都不给我 房天语你不是人你还我血汗钱！-->
+						<div class="row">
+							<div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<h3>合作伙伴</h3>
+							</div>
+						<!-- 大金主 -->
+							<div class="text-center img-p-logo"><!--这是给 AIC  的如果  AIC 给钱了
+								<img src="" class="logo_L"><br>-->
+								<a href="http://www.microsoft.com/zh-cn/default.aspx" target="_blank"><img src="/img/ms_w.png" class="logo_M"></a>
+								<a href="https://coding.net/" target="_blank"><img src="/img/coding_w.png" class="logo_M"></a><br>
+								<a href="http://www.broadview.com.cn/" target="_blank"><img src="/img/bv_w.png" class="logo_S_w"></a>	
+								<a href="http://sf.gg" target="_blank"><img src="/img/sf_w.png" class="logo_S_h"></a>			
+								<a href="https://gitcafe.com/" target="_blank" title="居然一百块都不给"><img src="/img/gitcafe_w.png" class="logo_S_h"></a><br>
+								<a href="https://www.imaginecup.com/" target="_blank"><img src="/img/ic_w.png" class="logo_S_w"></a>
+								<a href="http://smss.buaa.edu.cn/" target="_blank"><img src="/img/bhun_w.png" class="logo_S_w"></a>
+								<a href="http://xitu.io" target="_blank"><img src="/img/xitu_w.png" class="logo_S_w"></a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<h2>Stay Connexted</h2>
+								<h4>提高你的姿势水平</h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 contact-module">
+								<p>
+									<i class="fa fa-linkedin"> <a href="http://www.linkedin.com/groups?gid=6966240">Connext Circle</a></i>
+									<br>
+									<i class="fa fa-weibo"> <a href="http://weibo.com/connext">@Connext</a></i>
+									<br>
+									<i class="fa fa-facebook"> <a href="https://www.facebook.com/connextconf">ConnextConf</a></i>
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<footer>
+				<a href="/">&copy; Copyright <script type="text/javascript">document.write((new Date()).getFullYear());</script> Connext Conferences. All rights reserved.</a> <a href="http://www.joyneop.com/">Designed by Joy Neop.</a>
+			</footer>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	(function(ele, ratio){
+		if (ratio != 1) {
+			for (var i = 0; i < ele.length; i++) {
+				if ( !ele[i].src.match(/@\dx\.\w{3,4}$/) ) {
+					ele[i].src = ele[i].src.replace(/\.(png|jpg|jpeg|gif)$/, '@' + ratio + 'x.$1');
+				};
+			};
+		}
+	})(document.querySelectorAll('img[retina]'), window.devicePixelRatio);
+
+	setTimeout(function(){
+		showHeader();
+	}, 3000);
+	</script>
+</body>
+</html>
+
